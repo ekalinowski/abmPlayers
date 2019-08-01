@@ -35,6 +35,12 @@ public class PlayersController {
     	return players;
     }
     
+    @RequestMapping(value = "/players2", method = RequestMethod.GET)
+    public String getPlayers2(@RequestParam(value="name", defaultValue = "") String name) {
+    	
+    	return "va queriendo";
+    }
+    
     @RequestMapping(value = "/players", method = RequestMethod.POST)
     public @ResponseBody Player postPlayers(@RequestBody Player player) {
     	playerDAO.save(player);
